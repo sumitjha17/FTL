@@ -21,6 +21,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ftlapp/', include('FTLapp.urls')),
-    path('', RedirectView.as_view(url='admin/')),
+    path('', include('FTLapp.urls')),
+    #path('', RedirectView.as_view(url='admin/')),
 ]# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

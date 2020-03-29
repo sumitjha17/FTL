@@ -1,6 +1,17 @@
-from django.urls import path
+
+from . import views
+from django.urls import include, path
+from rest_framework import routers
 from . import views
 
-urlpatterns = [
+router = routers.DefaultRouter()
+router.register(r'FTLmembers', views.MembersViewSet)
 
+router.register(r'FTLmembersactivity', views.Activity_periodViewSet)
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
+urlpatterns = [
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
