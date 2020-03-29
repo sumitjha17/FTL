@@ -9,9 +9,9 @@ class Activity_period(models.Model):
     end_time = models.DateTimeField()
     member_id= models.ForeignKey('Members', on_delete=models.SET_NULL, null=True) 
 	
-    def __str__(self):
-        """String for representing the Model object."""
-        return self.member_id
+    # def __str__(self):
+        # """String for representing the Model object."""
+        # return self.real_name
 		
 	
 	
